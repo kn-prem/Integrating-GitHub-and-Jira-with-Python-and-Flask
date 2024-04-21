@@ -1,9 +1,19 @@
 # Integrating-GitHub-and-Jira-with-Python-and-Flask
+This project automates the creation of Jira tickets from GitHub issues using Python.
+
+
+Prerequisites
+1. Python 3.x installed on your system.
+2. Jira account with API token.
+3. GitHub repository with webhook configured.
 
 Steps to be followed
+1. Set up a webhook on your GitHub repository to send JSON information whenever a specified comment is made. This webhook will trigger the Python script.
+2. Obtain your Jira API token from your account settings.
+3. Configure the Python script with your Jira credentials and project details.
+4. The github_jira.py script contains the code to create Jira tickets.
+5. It listens for webhook payloads from GitHub, extracts relevant information, and makes API calls to Jira to create tickets.
+6. Run the main.py script on an EC2 instance or any server where it can be continuously running.
+7. Whenever a comment is made on a GitHub issue, the script will automatically create a corresponding Jira ticket.
 
-1. In your GitHub repository settings, navigate to Webhooks and add a new webhook.
-2. Make sure to select the events you want to trigger Jira updates, such as commits or pull requests.
-3. After configuring GitHub, deploy your application to an EC2 instance. Use Python for your application and ensure it's running on a specific port, flask runs on default port 5000.
-4. In the AWS console, configure the security group attached to your EC2 instance to allow inbound traffic on port 5000.
-5. if you add a comment(/jira) for example, a new Jira ticket will be created automatically.
+
